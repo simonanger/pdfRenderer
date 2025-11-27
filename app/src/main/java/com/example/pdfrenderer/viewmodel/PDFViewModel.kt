@@ -7,10 +7,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pdfrenderer.gestures.ZoomListener
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class PDFViewModel : ViewModel() {
+class PDFViewModel : ViewModel(), ZoomListener {
     private var pdfRenderer: PdfRenderer? = null
     private var fileDescriptor: ParcelFileDescriptor? = null
 
@@ -104,6 +105,10 @@ class PDFViewModel : ViewModel() {
         _zoomLevel.value = 1f
         _scrollX.value = 0f
         _scrollY.value = 0f
+    }
+
+    override fun onZoomChange(zoomLevel: Float) {
+        setZoomLevel(zoomLevel)
     }
 
     private fun renderPage(pageIndex: Int) {

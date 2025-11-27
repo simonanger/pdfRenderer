@@ -1,26 +1,13 @@
 package com.example.pdfrenderer.di
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.example.pdfrenderer.viewmodel.PDFViewModel
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
+/**
+ * Hilt module for dependency injection configuration.
+ * Currently empty but kept for future module dependencies.
+ */
 @Module
 @InstallIn(SingletonComponent::class)
-object PDFModule {
-
-    @Provides
-    @Singleton
-    fun providePDFViewModelFactory(): ViewModelProvider.Factory {
-        return object : ViewModelProvider.Factory {
-            @Suppress("UNCHECKED_CAST")
-            override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                return PDFViewModel() as T
-            }
-        }
-    }
-}
+object PDFModule

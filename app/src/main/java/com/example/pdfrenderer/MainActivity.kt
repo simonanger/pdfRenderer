@@ -12,7 +12,6 @@ import com.example.pdfrenderer.databinding.ActivityMainBinding
 import com.example.pdfrenderer.gestures.PinchZoomGestureListener
 import com.example.pdfrenderer.viewmodel.PDFViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -20,9 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val pdfViewModel: PDFViewModel by viewModels()
     private lateinit var scaleGestureDetector: ScaleGestureDetector
-
-    @Inject
-    lateinit var pinchZoomListener: PinchZoomGestureListener
+    private lateinit var pinchZoomListener: PinchZoomGestureListener
 
     private val filePicker = registerForActivityResult(
         ActivityResultContracts.GetContent()
@@ -38,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Initialize the pinch zoom gesture listener with the ViewModel as the ZoomListener
+        pinchZoomListener = PinchZoomGestureListener(pdfViewModel)
         scaleGestureDetector = ScaleGestureDetector(this, pinchZoomListener)
 
         setupUIListeners()
