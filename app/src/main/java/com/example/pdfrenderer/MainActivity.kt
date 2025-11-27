@@ -1,10 +1,8 @@
 package com.example.pdfrenderer
 
 import android.graphics.Bitmap
-import android.graphics.Matrix
 import android.net.Uri
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -15,8 +13,6 @@ import com.example.pdfrenderer.gestures.PinchZoomGestureListener
 import com.example.pdfrenderer.viewmodel.PDFViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import kotlin.math.max
-import kotlin.math.min
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

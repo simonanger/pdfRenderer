@@ -28,4 +28,8 @@ class PinchZoomGestureListener @Inject constructor(
         lastScaleY = detector.focusY
         return true
     }
+
+    override fun onScaleEnd(detector: ScaleGestureDetector) {
+        // Scale gesture ended - no additional action needed
+    }
 }

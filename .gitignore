@@ -1,0 +1,42 @@
+# Gradle
+.gradle/
+build/
+*.apk
+*.aab
+
+# Android Studio
+.idea/
+.DS_Store
+*.iml
+*.iws
+*.ipr
+
+# Build files
+*.jks
+*.keystore
+
+# Local configuration
+local.properties
+
+# Generated files
+.classpath
+.project
+.settings/
+
+# Gradle wrapper (optional - some teams commit this)
+# gradle/wrapper/gradle-wrapper.jar
+# gradle/wrapper/gradle-wrapper.properties
+
+# IDE
+*.swp
+*.swo
+*~
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
