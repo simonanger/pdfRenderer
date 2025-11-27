@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "PDFRenderer"
 include(":app")
+include(":app:christos")
