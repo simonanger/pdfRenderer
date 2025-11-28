@@ -11,13 +11,31 @@ You have:
 - ✅ ViewModel that handles PDF rendering with `_pdfPages` LiveData
 - ✅ PdfRendererHelper with `renderPdf()`, `renderPages()`, `renderPage()`
 - ✅ RecyclerView displaying PDF pages as ImageViews
-- ✅ ZoomListener interface already exists
 
 You need to add:
-- 3 things to ViewModel (interface + LiveData + methods)
+- 1 ZoomListener interface (recreate if deleted)
+- 3 things to ViewModel (implement interface + LiveData + methods)
 - 4 lines to Activity onCreate (gesture setup + observer)
 - 1 gesture listener class
 - 1 small change to RecyclerView adapter
+
+---
+
+## Step 0: Create the ZoomListener Interface
+
+**File:** `gestures/ZoomListener.kt`
+
+```kotlin
+package com.yourapp.gestures
+
+/**
+ * Interface for handling zoom changes from pinch-to-zoom gestures.
+ * Implement this in your ViewModels to receive zoom level updates.
+ */
+interface ZoomListener {
+    fun onZoomChange(zoomLevel: Float)
+}
+```
 
 ---
 
